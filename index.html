@@ -1,1 +1,224 @@
-404 NOTTT FOUNDD
+<!-- Single-file responsive website
+     - Save as index.html and open in browser
+     - Includes: responsive nav, hero, features, gallery, contact form, and simple JS
+     - Lightweight, no external build tools required
+--><!doctype html>
+
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Situs Contoh — Halaman Satu File</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Contoh situs satu file, responsif, modern, mudah dikustomisasi." />
+  <style>
+    :root{
+      --bg:#0f172a; /* navy-900 */
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent-1:#7c3aed; /* violet */
+      --accent-2:#06b6d4; /* cyan */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max-width:1100px;
+      --ff: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--ff);
+      background: linear-gradient(180deg, #071029 0%, #081026 40%), radial-gradient(600px 300px at 10% 10%, rgba(124,58,237,0.08), transparent 10%), radial-gradient(400px 200px at 90% 90%, rgba(6,182,212,0.04), transparent 15%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:40px 20px;
+      display:flex;justify-content:center;
+    }
+    .wrap{width:100%;max-width:var(--max-width)}/* NAV */
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700}
+.brand h1{font-size:18px;margin:0}
+nav{display:flex;gap:14px;align-items:center}
+a.btn{padding:8px 14px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.04);text-decoration:none;color:inherit;font-weight:600}
+.cta{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:white;border:none}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr;gap:22px;align-items:center;padding:26px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:var(--radius);box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+.hero-inner{display:flex;flex-direction:column;gap:16px}
+.headline{font-size:28px;margin:0 0 4px 0;line-height:1.05}
+.sub{color:var(--muted);margin:0}
+.actions{display:flex;gap:12px;margin-top:6px}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+.card{background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.card h3{margin:0 0 8px 0}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+
+/* CONTACT */
+form{display:grid;gap:8px}
+input,textarea{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+button.full{padding:10px 12px;border-radius:10px;border:none;background:var(--accent-1);color:white;font-weight:700}
+
+/* FOOTER */
+footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(3,1fr)}
+  .headline{font-size:24px}
+}
+@media (max-width:600px){
+  header{flex-direction:column;align-items:flex-start}
+  .grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .hero{padding:18px}
+  .logo{width:40px;height:40px}
+}
+
+/* simple utility */
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">S</div>
+        <div>
+          <h1>SimpleSite</h1>
+          <div class="small muted">One-file HTML template</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#features">Fitur</a>
+        <a href="#gallery">Galeri</a>
+        <a href="#contact">Kontak</a>
+        <a class="btn cta" href="#contact">Hubungi</a>
+      </nav>
+    </header><main>
+  <section class="hero" aria-label="hero">
+    <div class="hero-inner">
+      <h2 class="headline">Buat situs statis cepat — siap dipakai & mudah dikustom</h2>
+      <p class="sub">Template single-file yang responsif, ringan, dan gampang dimodifikasi. Cocok untuk landing page, portofolio, atau test project.</p>
+      <div class="actions">
+        <a class="btn" href="#features">Lihat Fitur</a>
+        <a class="btn cta" href="#contact">Minta Demo</a>
+      </div>
+    </div>
+
+    <div class="card" style="justify-self:end;max-width:420px;">
+      <h3>Ringkasan</h3>
+      <p class="muted">Termasuk: desain responsif, form kontak (client-side validation), gallery, dan komponen yang mudah diubah.</p>
+      <div style="margin-top:10px" class="features">
+        <div class="card small">📱 Mobile-first</div>
+        <div class="card small">⚡ No-build</div>
+        <div class="card small">🎨 Gaya mudah</div>
+        <div class="card small">🔒 Aman</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="grid" aria-label="features">
+    <div class="card">
+      <h3>Fitur Utama</h3>
+      <p class="muted">Desain modern, grid responsif, dan komponen siap pakai.</p>
+      <ul class="small muted">
+        <li>Header &amp; navigasi responsif</li>
+        <li>Hero marketing</li>
+        <li>Grid fitur &amp; gallery</li>
+        <li>Form kontak sederhana</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Siapa cocok</h3>
+      <p class="muted">Pengembang pemula, freelancer, dan siapa pun yang butuh landing page cepat.</p>
+    </div>
+
+    <div class="card">
+      <h3>Cara pakai</h3>
+      <ol class="small muted">
+        <li>Simpan file sebagai <code>index.html</code></li>
+        <li>Buka di browser atau deploy ke GitHub Pages</li>
+        <li>Kustom teks, gambar, dan warna</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="gallery" style="margin-top:18px">
+    <h3>Galeri</h3>
+    <div class="gallery" aria-hidden="false">
+      <img src="https://picsum.photos/seed/1/800/600" alt="Contoh 1">
+      <img src="https://picsum.photos/seed/2/800/600" alt="Contoh 2">
+      <img src="https://picsum.photos/seed/3/800/600" alt="Contoh 3">
+      <img src="https://picsum.photos/seed/4/800/600" alt="Contoh 4">
+    </div>
+  </section>
+
+  <section id="contact" style="margin-top:18px">
+    <h3>Hubungi Kami</h3>
+    <div class="card" style="margin-top:8px">
+      <form id="contactForm" onsubmit="return handleSubmit(event)">
+        <label class="small muted">Nama</label>
+        <input type="text" id="name" placeholder="Nama kamu" required>
+
+        <label class="small muted">Email</label>
+        <input type="email" id="email" placeholder="email@contoh.com" required>
+
+        <label class="small muted">Pesan</label>
+        <textarea id="message" rows="4" placeholder="Tulis pesan singkat..." required></textarea>
+
+        <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:6px">
+          <div class="small muted">Atau hubungi via <strong>chat</strong></div>
+          <button class="full" type="submit">Kirim</button>
+        </div>
+
+        <div id="formResult" class="small muted" style="margin-top:8px"></div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> SimpleSite • Dibuat dengan ❤️
+</footer>
+
+  </div>  <script>
+    // small interactive bits
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const result = document.getElementById('formResult');
+
+      if(!name || !email || !message){
+        result.textContent = 'Lengkapi semua kolom sebelum mengirim.';
+        return false;
+      }
+
+      // Simulasi pengiriman (client-only). Ganti dengan fetch() ke server bila perlu.
+      result.textContent = 'Pesan terkirim. Terima kasih, ' + name + '!';
+      // Reset form after submit
+      e.target.reset();
+      setTimeout(()=>result.textContent = '', 5000);
+      return false;
+    }
+  </script></body>
+</html>
